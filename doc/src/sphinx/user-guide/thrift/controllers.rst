@@ -58,7 +58,7 @@ We can implement the following Thrift Controller:
     }
 
 
-The `handle(ThriftMethod)` function may seem magical but it serves an important purpose. By implementing your service method via this function, it allows the framework to apply the configured filter chain defined in your `server definition <../build-new-thrift-server#server-definition>`__ to your method implementation (passed as the callback to `handle(ThriftMethod)`).
+The `handle(ThriftMethod)` function may seem magical but it serves an important purpose. By implementing your service method via this function, it allows the framework to apply the configured filter chain defined in your `server definition <server.html#thrift-server-definition>`__ to your method implementation (passed as the callback to `handle(ThriftMethod)`).
 
 That is to say, the `handle(ThriftMethod)` function captures your method implementation then exposes it for the `ThriftRouter <https://github.com/twitter/finatra/blob/develop/thrift/src/main/scala/com/twitter/finatra/thrift/routing/ThriftRouter.scala>`__ to combine with the configured filter chain to build the `Finagle Service <https://twitter.github.io/finagle/guide/ServicesAndFilters.html>`__ that represents your server.
 
