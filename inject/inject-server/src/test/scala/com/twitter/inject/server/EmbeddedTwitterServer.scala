@@ -476,7 +476,7 @@ class EmbeddedTwitterServer(
     injectableServer.addFrameworkOverrideModules(module)
   }
 
-  private def disableLogging = {
+  private val disableLogging = {
     disableTestLogging || System.getProperties.keySet().contains("com.twitter.inject.test.logging.disabled")
   }
 
